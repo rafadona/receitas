@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="src/img/favicon.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="src/sass/main.scss" />
+    <script type="module" defer src="src/js/controller.js"></script>
+
+    <title>Receitas // Mais de 1.000.000 de receitas para pesquisar</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <a href="."
+          ><img src="src/img/logo.png" alt="Logo" class="header__logo"
+        /></a>
+        <form class="search">
+          <input
+            type="text"
+            class="search__field"
+            placeholder="Mais de 1.000.000 de receitas"
+          />
+          <button class="btn search__btn">
+            <svg class="search__icon">
+              <use href="src/img/icons.svg#icon-search"></use>
+            </svg>
+            <span>Buscar</span>
+          </button>
+        </form>
+
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <button class="nav__btn nav__btn--add-recipe">
+                <svg class="nav__icon">
+                  <use href="src/img/icons.svg#icon-edit"></use>
+                </svg>
+                <span>Adicionar receita</span>
+              </button>
+            </li>
+            <li class="nav__item">
+              <button class="nav__btn nav__btn--bookmarks">
+                <svg class="nav__icon">
+                  <use href="src/img/icons.svg#icon-bookmark"></use>
+                </svg>
+                <span>Favoritos</span>
+              </button>
+              <div class="bookmarks">
+                <ul class="bookmarks__list">
+                  <div class="message">
+                    <div>
+                      <svg>
+                        <use href="src/img/icons.svg#icon-smile"></use>
+                      </svg>
+                    </div>
+                    <p>
+                      Ainda não há favoritos. Encontre uma boa receita marque-a
+                      como favorito!
+                    </p>
+                  </div>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="search-results">
+        <ul class="results"></ul>
+        <div class="pagination"></div>
+
+        <p class="copyright">
+          <a
+            class="twitter-link"
+            target="_blank"
+            href="https://github.com/rafadona"
+            >Rafael Doná</a
+          >.
+        </p>
+      </div>
+
+      <div class="recipe">
+        <div class="message">
+          <div>
+            <svg>
+              <use href="src/img/icons.svg#icon-smile"></use>
+            </svg>
+          </div>
+          <p>Comece pesquisando uma receita ou um ingrediente. Divirta-se!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay hidden"></div>
+    <div class="add-recipe-window hidden">
+      <button class="btn--close-modal">&times;</button>
+      <form class="upload">
+        <div class="upload__column">
+          <h3 class="upload__heading">Dados da receita</h3>
+          <label>Título</label>
+          <input
+            placeholder="Bolo de chocolate"
+            required
+            name="title"
+            type="text"
+          />
+          <label>URL</label>
+          <input
+            required
+            name="sourceUrl"
+            type="text"
+            placeholder="https://www.meulink.com"
+          />
+          <label>URL Imagem</label>
+          <input
+            placeholder="https://www.meulink.com/image.jpg"
+            required
+            name="image"
+            type="text"
+          />
+          <label>Autor</label>
+          <input
+            placeholder="Casa dos Bolos"
+            required
+            name="publisher"
+            type="text"
+          />
+          <label>Tempo de preparo</label>
+          <input
+            placeholder="Valor em minutos.Ex: 30"
+            required
+            name="cookingTime"
+            type="number"
+            min="0"
+          />
+          <label>Porções</label>
+          <input
+            placeholder="Quantas pessoas: Ex: 4"
+            required
+            name="servings"
+            type="number"
+            min="0"
+          />
+        </div>
+
+        <div class="upload__column">
+          <h3 class="upload__heading">Ingredientes</h3>
+          <label>Ingrediente 1</label>
+          <input
+            type="text"
+            required
+            name="ingredient-1"
+            placeholder="Formato:'Quantidade,Unidade,Descrição'"
+          />
+          <label>Ingrediente 2</label>
+          <input
+            type="text"
+            name="ingredient-2"
+            placeholder="Formato:'Quantidade,Unidade,Descrição'"
+          />
+          <label>Ingrediente 3</label>
+          <input
+            type="text"
+            name="ingredient-3"
+            placeholder="Formato:'Quantidade,Unidade,Descrição'"
+          />
+          <label>Ingrediente 4</label>
+          <input
+            type="text"
+            name="ingredient-4"
+            placeholder="Formato: 'Quantidade,Unidade,Descrição'"
+          />
+          <label>Ingrediente 5</label>
+          <input
+            type="text"
+            name="ingredient-5"
+            placeholder="Formato: 'Quantidade,Unidade,Descrição'"
+          />
+          <label>Ingrediente 6</label>
+          <input
+            type="text"
+            name="ingredient-6"
+            placeholder="Formato: 'Quantidade,Unidade,Descrição'"
+          />
+        </div>
+
+        <button class="btn upload__btn">
+          <svg>
+            <use href="src/img/icons.svg#icon-upload-cloud"></use>
+          </svg>
+          <span>Upload</span>
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
